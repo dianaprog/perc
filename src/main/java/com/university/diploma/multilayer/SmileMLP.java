@@ -23,7 +23,7 @@ public class SmileMLP {
         final CSVFormat format = CSVFormat.newFormat('\t').withFirstRecordAsHeader().withIgnoreEmptyLines()
                                           .withTrim();
         String directory = "/Users/dianashageeva/Documents/dipl/";
-        final DataFrame csv = Read.csv(directory + "strong.tsv", format);
+        final DataFrame csv = Read.csv(directory + "strong.tsv", format).slice(0,750);
         final DataFrame strong = csv.select(strings);
         final DataFrame weak = Read.csv(directory + "weak.tsv", format).select(strings);
         final DataFrame middle = Read.csv(directory + "middle.tsv", format).select(strings);
